@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonathan Faith Poedjianto - Building Intelligent Systems</title>
+<meta name="description" content="Jonathan Faith Poedjianto - Computer Science student building FRIDAY, a local multi-agent AI assistant, and other software and automation systems.">
+<meta name="theme-color" content="#0A0B0C">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Persistent frame-sequence background: sits behind every section, tied to whole-page scroll -->
+<div class="page-bg">
+  <img class="page-bg-fallback" id="bgPosterFallback" src="assets/videos/hero-poster.jpg" alt="">
+  <canvas id="bgCanvas" width="1024" height="592"></canvas>
+  <div class="page-bg-scrim"></div>
+</div>
+
+<div id="preloader">
+  <div class="pl-grid"></div>
+  <div class="pl-scan"></div>
+  <div class="pl-top">
+    <span class="pl-label mono">JONATHAN FAITH POEDJIANTO</span>
+    <span class="pl-label mono pl-status">INITIALIZING INTERFACE</span>
+  </div>
+  <div class="pl-center">
+    <span class="pl-count mono">0%</span>
+  </div>
+  <div class="pl-bottom">
+    <div class="pl-ticks">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <span class="pl-label mono">HANGZHOU, CHINA</span>
+  </div>
+  <div class="pl-bar"></div>
+</div>
+
+<!--NAV-->
+<nav class="nav">
+  <a href="#top" class="nav-logo">JOFAITH</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#friday">FRIDAY</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="assets/CV-Jofaith-Internship.pdf" target="_blank" rel="noopener" data-cv-link>CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Open menu">Menu</button>
+</nav>
+
+<div class="mobile-panel">
+  <button class="close-btn" aria-label="Close menu">Close</button>
+  <a href="#projects">Work</a>
+  <a href="#friday">FRIDAY</a>
+  <a href="#about">About</a>
+  <a href="assets/CV-Jofaith-Internship.pdf" target="_blank" rel="noopener" data-cv-link>CV</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!--HERO-->
+<header class="hero" id="top" data-cursor="EXPLORE">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="dot"></span>AVAILABLE FOR INTERNSHIPS - 2026/2027</div>
+    <h1>
+      <span class="line"><span>JONATHAN FAITH</span></span>
+      <span class="line"><span>POEDJIANTO</span></span>
+    </h1>
+    <p class="hero-sub">Building intelligent systems. Computer Science student focused on AI engineering, software engineering, and automation - currently building FRIDAY, a local, multi-agent personal AI assistant.</p>
+    <div class="hero-meta">
+      <div class="item"><strong>Zhejiang University of Science and Technology</strong>Computer Science · Class of 2027</div>
+      <div class="item"><strong>Hangzhou, China</strong>Open to relocation for internships</div>
+      <div class="item"><strong>Primary project</strong>FRIDAY - local AI assistant</div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL TO EXPLORE</span><span class="arrow">↓</span></div>
+</header>
+
+<!--ABOUT-->
+<section id="about">
+  <div class="wrap">
+    <div class="section-index reveal">01 - WHO I AM</div>
+    <h2 class="section-title reveal">A systems builder, not just a student with a laptop</h2>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>I build things end-to-end and rebuild them when they don't hold up. FRIDAY, my primary project, started as a simple idea - an assistant that could actually act on my computer - and grew, through repeated rewrites and debugging, into a 35,000+ line multi-agent system that now runs almost entirely offline.</p>
+        <p>Outside of engineering, I lead and direct a band as freelance work, and occasionally guide Indonesian visitors around China. Both involve the same underlying skill as debugging a live system: coordinating moving parts toward one outcome, in real time, with no do-overs.</p>
+        <p>I'm looking for an internship in AI engineering, software/backend development, QA and test automation, or DevOps - somewhere I can keep building and debugging real systems rather than just calling an API and moving on.</p>
+      </div>
+      <div class="about-facts reveal">
+        <div class="fact"><div class="k">EDUCATION</div><div class="v">B.S. Computer Science, Zhejiang University of Science and Technology (2023–2027)</div></div>
+        <div class="fact"><div class="k">LOCATION</div><div class="v">Hangzhou, China</div></div>
+        <div class="fact"><div class="k">LANGUAGES</div><div class="v">Indonesian (native), English (fluent), Mandarin (intermediate, HSK 4)</div></div>
+        <div class="fact"><div class="k">FOCUS</div><div class="v">AI engineering · Software engineering · Automation</div></div>
+        <div class="fact"><div class="k">CURRENTLY</div><div class="v">Building FRIDAY, solo</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--FRIDAY-->
+<section id="friday" class="friday-section">
+  <div class="wrap">
+    <div class="section-index reveal">02 - FEATURED PROJECT</div>
+
+    <div class="friday-hero reveal" data-cursor="EXPLORE">
+      <div class="media-bg"></div>
+      <!-- Replace with a Higgsfield-generated cinematic loop: assets/videos/friday-loop.mp4 -->
+      <video data-optional autoplay muted loop playsinline preload="none">
+        <source src="assets/videos/friday-loop.mp4" type="video/mp4">
+      </video>
+      <div class="friday-hero-inner">
+        <div class="friday-kicker mono">PERSONAL AI ASSISTANT · AI SYSTEMS · AUTOMATION</div>
+        <h2>FRIDAY</h2>
+        <p class="friday-desc">A local, multi-agent AI assistant - designed, built, and rebuilt solo. Runs a local LLM, routes commands deterministically across specialized agents, and automates real tasks through n8n and Docker.</p>
+      </div>
+    </div>
+
+    <div class="status-strip reveal">
+      <div class="status-cell"><div class="s-label"><span class="blip"></span>ROLE</div><div class="s-value">Solo project</div></div>
+      <div class="status-cell"><div class="s-label"><span class="blip"></span>STATUS</div><div class="s-value">In active development</div></div>
+      <div class="status-cell"><div class="s-label"><span class="blip"></span>LLM RUNTIME</div><div class="s-value">Ollama · qwen2.5:3b</div></div>
+      <div class="status-cell"><div class="s-label"><span class="blip"></span>VOICE PIPELINE</div><div class="s-value">Offline · faster-whisper / Piper</div></div>
+      <div class="status-cell"><div class="s-label"><span class="blip"></span>SCALE</div><div class="s-value">~147 files · 35,000+ lines</div></div>
+    </div>
+
+    <div class="placeholder reveal">
+      <img class="ph-img" data-optional-img src="assets/images/friday-main-gui.jpg" alt="FRIDAY main GUI screenshot">
+      <span class="ph-tag mono">[FRIDAY MAIN GUI]</span>
+      <div class="ph-instructions">
+        <p><strong>What to capture:</strong> The Electron interface running live, in its normal idle or active state.</p>
+        <p class="ph-meta"><strong>Where it goes:</strong> Directly below the status strip above. <strong>What it proves:</strong> That FRIDAY is a real, running application - the first hard evidence a recruiter sees.</p>
+      </div>
+    </div>
+
+    <div class="placeholder reveal">
+      <img class="ph-img" data-optional-img src="assets/images/friday-main-gui2.jpg" alt="FRIDAY main GUI screenshot">
+      <span class="ph-tag mono">[FRIDAY MAIN GUI]</span>
+      <div class="ph-instructions">
+        <p><strong>What to capture:</strong> The Electron interface running live, in its normal idle or active state.</p>
+        <p class="ph-meta"><strong>Where it goes:</strong> Directly below the status strip above. <strong>What it proves:</strong> That FRIDAY is a real, running application - the first hard evidence a recruiter sees.</p>
+      </div>
+    </div>
+
+    <div class="pas-grid reveal">
+      <div class="pas-cell">
+        <div class="p-label mono">PROBLEM</div>
+        <p>AI assistants can understand language, but turning a natural-language request into a reliable action takes more than an LLM on its own.</p>
+      </div>
+      <div class="pas-cell">
+        <div class="p-label mono">APPROACH</div>
+        <p>Deterministic command routing, specialized agents, a local model for open-ended requests, and automation workflows for the actions that follow.</p>
+      </div>
+      <div class="pas-cell">
+        <div class="p-label mono">SYSTEM</div>
+        <p>A single pipeline carries a request from voice input to a completed action - shown below.</p>
+      </div>
+    </div>
+
+    <h3 class="section-title reveal" style="font-size:1.4rem; margin-bottom:20px;">How a request moves through the system</h3>
+    <div class="system-flow reveal">
+      <div class="flow-node">VOICE</div><div class="flow-arrow">→</div>
+      <div class="flow-node">COMMAND PROCESSING</div><div class="flow-arrow">→</div>
+      <div class="flow-node">AGENT MANAGER (ROUTING)</div><div class="flow-arrow">→</div>
+      <div class="flow-node">SPECIALIZED AGENT</div><div class="flow-arrow">→</div>
+      <div class="flow-node">TOOLS / n8n</div><div class="flow-arrow">→</div>
+      <div class="flow-node">ACTION</div>
+    </div>
+
+    <div class="placeholder reveal">
+      <img class="ph-img" data-optional-img src="assets/images/friday-agent-routing.jpg" alt="FRIDAY agent routing / dispatch log screenshot">
+      <span class="ph-tag mono">[AGENT ROUTING / DISPATCH LOG]</span>
+      <div class="ph-instructions">
+        <p><strong>What to capture:</strong> A debug or log view showing the AgentManager routing a command to a specific agent.</p>
+        <p class="ph-meta"><strong>Where it goes:</strong> Right after the system-flow diagram above. <strong>What it proves:</strong> That the routing pipeline above is real and observable - the strongest single piece of evidence for the architecture.</p>
+      </div>
+    </div>
+
+    <div class="arch-block reveal">
+      <h3 class="section-title" style="font-size:1.4rem; margin-bottom:20px;">Architecture</h3>
+      <p style="margin-bottom:26px;">Only components actually part of the current implementation are shown here. The full architecture diagram below is a placeholder for a formal version to be produced separately.</p>
+      <div class="arch-diagram">
+        <div class="arch-node accent"><div class="a-label mono">Electron GUI</div><div class="a-sub">Desktop interface</div></div>
+        <div class="arch-node accent"><div class="a-label mono">Python Backend</div><div class="a-sub">process_command()</div></div>
+        <div class="arch-node accent"><div class="a-label mono">AgentManager</div><div class="a-sub">Priority-based dispatcher</div></div>
+        <div class="arch-node"><div class="a-label mono">Ollama</div><div class="a-sub">Local LLM · qwen2.5:3b</div></div>
+        <div class="arch-node"><div class="a-label mono">SystemAgent</div><div class="a-sub">Agent</div></div>
+        <div class="arch-node"><div class="a-label mono">PluginAgent</div><div class="a-sub">Agent</div></div>
+        <div class="arch-node"><div class="a-label mono">RAGAgent</div><div class="a-sub">ChromaDB + sentence-transformers</div></div>
+        <div class="arch-node"><div class="a-label mono">VisionAgent</div><div class="a-sub">Screen OCR / context</div></div>
+        <div class="arch-node"><div class="a-label mono">TaskAgent</div><div class="a-sub">Agent</div></div>
+        <div class="arch-node"><div class="a-label mono">ProactiveAgent</div><div class="a-sub">Agent</div></div>
+        <div class="arch-node"><div class="a-label mono">ConversationAgent</div><div class="a-sub">Agent</div></div>
+        <div class="arch-node"><div class="a-label mono">Voice I/O</div><div class="a-sub">faster-whisper / Piper</div></div>
+        <div class="arch-node"><div class="a-label mono">n8n</div><div class="a-sub">Automation workflows</div></div>
+        <div class="arch-node"><div class="a-label mono">Docker</div><div class="a-sub">Containerization</div></div>
+        <div class="arch-node"><div class="a-label mono">REST / Webhooks</div><div class="a-sub">External services</div></div>
+        <div class="arch-node"><div class="a-label mono">Integrations</div><div class="a-sub">Spotify, YouTube, Bluetooth, Gmail, WeChat</div></div>
+      </div>
+    </div>
+
+    <div class="placeholder reveal">
+      <img class="ph-img" data-optional-img src="assets/images/architecture-diagram.jpg" alt="FRIDAY architecture diagram">
+      <span class="ph-tag mono">[FORMAL ARCHITECTURE DIAGRAM - TO BE PROVIDED]</span>
+      <div class="ph-instructions">
+        <p>A polished, hand-produced diagram of the real system will go here once created. It should reflect exactly the components listed above - nothing added for visual completeness.</p>
+        <p class="ph-meta"><strong>Where it goes:</strong> Directly beneath the component grid above, replacing or supplementing it once ready.</p>
+      </div>
+    </div>
+
+    <div class="video-frame reveal">
+      <!-- Replace with a Higgsfield-generated cinematic loop: assets/videos/friday-system-loop.mp4 -->
+      <video data-optional autoplay muted loop playsinline preload="none">
+        <source src="assets/videos/friday-system-loop.mp4" type="video/mp4">
+      </video>
+      <div class="vf-caption mono">FRIDAY IN OPERATION - video placeholder, assets/videos/friday-system-loop.mp4</div>
+    </div>
+
+    <div class="decision-list reveal">
+      <h3 class="section-title" style="font-size:1.4rem; margin-bottom:0;">Key technical decisions</h3>
+      <div class="decision-item">
+        <h4>Deterministic routing, LLM as fallback</h4>
+        <p>Known commands are matched and routed directly by the AgentManager; the local model is only invoked when nothing matches - keeping everyday actions fast and predictable while still handling open-ended requests.</p>
+      </div>
+      <div class="decision-item">
+        <h4>Moving the voice pipeline fully offline</h4>
+        <p>STT and TTS originally ran through the Google Speech API and edge-tts. Both were replaced with faster-whisper and Piper so the core voice loop no longer depends on an internet connection.</p>
+      </div>
+      <div class="decision-item">
+        <h4>Monolith → multi-agent refactor</h4>
+        <p>As FRIDAY's feature set grew, a single script became hard to extend and debug. Splitting responsibilities across seven agents behind a central dispatcher made each piece easier to reason about and modify independently.</p>
+      </div>
+    </div>
+
+    <div class="placeholder reveal">
+      <img class="ph-img" data-optional-img src="assets/images/friday-n8n-workflow.jpg" alt="FRIDAY n8n automation workflow screenshot">
+      <span class="ph-tag mono">[n8n AUTOMATION WORKFLOW]</span>
+      <div class="ph-instructions">
+        <p><strong>What to capture:</strong> A real n8n workflow canvas used by FRIDAY for an actual automation.</p>
+        <p class="ph-meta"><strong>Where it goes:</strong> Alongside the technical decisions above. <strong>What it proves:</strong> Practical orchestration skill relevant to automation and DevOps-leaning roles.</p>
+      </div>
+    </div>
+
+    <div class="placeholder reveal">
+      <img class="ph-img" data-optional-img src="assets/images/friday-docker-setup.jpg" alt="FRIDAY Docker container setup screenshot">
+      <span class="ph-tag mono">[DOCKER / CONTAINER SETUP]</span>
+      <div class="ph-instructions">
+        <p><strong>What to capture:</strong> Terminal output or a docker-compose file showing FRIDAY's containerized components running.</p>
+        <p class="ph-meta"><strong>Where it goes:</strong> Grouped with the n8n screenshot above, as "Infrastructure." <strong>What it proves:</strong> Real, working containerization.</p>
+      </div>
+    </div>
+
+    <div class="metrics-row reveal">
+      <div class="metric-cell"><div class="m-num">~147</div><div class="m-label">PYTHON FILES</div></div>
+      <div class="metric-cell"><div class="m-num">35,000+</div><div class="m-label">LINES OF PYTHON</div></div>
+      <div class="metric-cell"><div class="m-num">7</div><div class="m-label">SPECIALIZED AGENTS</div></div>
+      <div class="metric-cell"><div class="m-num">10+</div><div class="m-label">INTEGRATIONS &amp; PLUGINS</div></div>
+    </div>
+    <p style="font-size:0.85rem; color:var(--text-faint); margin-bottom:90px;">Integrations include Spotify, YouTube search, Bluetooth control, Gmail automation, WeChat automation, and a plugin system covering weather, news, timers, jokes, and calendar. Performance benchmarks (latency, resource usage) will be added once measured.</p>
+
+    <div class="timeline-cinematic reveal">
+      <h3 class="section-title" style="font-size:1.4rem; margin: 40px 0 0 0;">How it's evolved</h3>
+      <div class="tl-row"><div class="tl-num mono">01</div><div><h4>Monolithic script</h4><p>FRIDAY began as a single script handling commands directly.</p></div></div>
+      <div class="tl-row"><div class="tl-num mono">02</div><div><h4>Multi-agent refactor</h4><p>Rebuilt around the AgentManager and seven specialized agents (late June 2026), making the system far easier to extend.</p></div></div>
+      <div class="tl-row"><div class="tl-num mono">03</div><div><h4>Fully offline voice pipeline</h4><p>Replaced cloud-based STT/TTS with faster-whisper and Piper.</p></div></div>
+      <div class="tl-row"><div class="tl-num mono">04</div><div><h4>Indonesian language support</h4><p>Added support for Indonesian.</p></div></div>
+      <div class="tl-row"><div class="tl-num mono">05</div><div><h4>Location &amp; mapping</h4><p>Integrated a free OpenStreetMap stack with a Leaflet.js map panel in the Electron GUI.</p></div></div>
+      <div class="tl-row"><div class="tl-num mono">06</div><div><h4>FRIDAY Android app</h4><p>Started a mobile companion app, extending FRIDAY beyond desktop.</p></div></div>
+    </div>
+
+    <div class="reveal" style="margin-top:60px;">
+      <h3 class="section-title" style="font-size:1.4rem;">What I learned, and what's next</h3>
+      <p style="margin-bottom:20px;">Rebuilding FRIDAY's architecture showed how expensive it gets to keep extending a system that wasn't designed to be extended - and how much a clear dispatch layer simplifies adding capability later. Moving the voice pipeline offline was a real lesson in trading a small amount of quality for independence from external services, cost, and latency.</p>
+      <p>Next: a clean, documented public GitHub repository, automated tests around the agent routing logic, and measured performance benchmarks instead of relying on scale alone as evidence.</p>
+    </div>
+  </div>
+</section>
+
+<!--PROJECTS-->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-index reveal">03 - OTHER PROJECTS</div>
+    <h2 class="section-title reveal">Different problems, different stacks</h2>
+
+    <div class="proj-row reveal" data-cursor="VIEW">
+      <div class="proj-num">01</div>
+      <div class="proj-body">
+        <h3>FRIDAY - Android</h3>
+        <div class="proj-meta mono">SOLO · MOBILE COMPANION APP</div>
+        <p>A mobile companion app extending FRIDAY beyond desktop.</p>
+        <div class="proj-tech">
+          <span>Android</span>
+          <span>Kotlin</span>
+        </div>
+      </div>
+      <a href="#friday" class="proj-link">VIEW PROJECT →</a>
+    </div>
+
+    <div class="proj-row reveal" data-cursor="SOON">
+    <div class="proj-num">02</div>
+    <div class="proj-body">
+      <h3>Student Management System</h3>
+      <div class="proj-meta mono">FULL-STACK DEVELOPER · UNIVERSITY PROJECT</div>
+      <p>
+        A Java-based student management application for organizing and managing
+        student information through an application interface connected to a SQL database.
+      </p>
+      <div class="proj-tech">
+        <span>Java</span>
+        <span>SQL</span>
+        <span>IntelliJ IDEA</span>
+      </div>
+    </div>
+    <span class="proj-link">UNIVERSITY PROJECT</span>
+  </div>
+
+  <div class="proj-row reveal" data-cursor="SOON">
+    <div class="proj-num">03</div>
+    <div class="proj-body">
+      <h3>Tic-Tac-Toe</h3>
+      <div class="proj-meta mono">TEAM PROJECT · WEB DEVELOPMENT</div>
+      <p>
+        A web-based Tic-Tac-Toe game developed as a team project to implement
+        game logic, interactive user input, and a responsive browser-based interface.
+      </p>
+      <div class="proj-tech">
+        <span>Python</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+    </div>
+    <span class="proj-link">TEAM PROJECT</span>
+  </div>
+
+  </div>
+</section>
+
+<!--SKILLS-->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-index reveal">04 - ENGINEERING</div>
+    <h2 class="section-title reveal">Capabilities, not a badge wall</h2>
+    <div class="cap-grid reveal">
+      <div class="cap-cell">
+        <h4>AI &amp; INTELLIGENT SYSTEMS</h4>
+        <div class="cap-list">
+          <span>Python</span><span>Local LLM integration (Ollama)</span><span>Agent-based systems &amp; routing</span><span>Retrieval-augmented generation (RAG)</span><span>Voice interfaces (STT/TTS)</span>
+        </div>
+        <p class="cap-note">Applied and integration-focused - not model training or fine-tuning.</p>
+      </div>
+      <div class="cap-cell">
+        <h4>AUTOMATION</h4>
+        <div class="cap-list">
+          <span>n8n</span><span>Webhooks</span><span>REST API integration</span><span>Workflow automation</span>
+        </div>
+      </div>
+      <div class="cap-cell">
+        <h4>SOFTWARE</h4>
+        <div class="cap-list">
+          <span>Python</span><span>C / C++</span><span>SQL</span><span>HTML / CSS / JavaScript</span><span>Electron</span>
+        </div>
+      </div>
+      <div class="cap-cell">
+        <h4>TOOLS</h4>
+        <div class="cap-list">
+          <span>Git / GitHub</span><span>Docker</span><span>Ollama</span><span>Kubernetes (learning)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--EXPERIENCE-->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-index reveal">05 - EXPERIENCE</div>
+    <h2 class="section-title reveal">Beyond the codebase</h2>
+    <div class="exp-timeline reveal">
+      <div class="exp-row">
+        <div class="exp-tag mono">FREELANCE</div>
+        <div><h4>Band Music Director &amp; Band Leader</h4><p>Leads and directs a band, managing rehearsals and live performances. Placed 1st in a school-level competition as band leader.</p></div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-tag mono">FREELANCE</div>
+        <div><h4>Tour Guide</h4><p>Guides Indonesian visitors around China, coordinating logistics and communication across Indonesian, English, and Mandarin.</p></div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-tag mono">UNIVERSITY</div>
+        <div><h4>Project Lead</h4><p>Led a class team project, coordinating teammates and taking ownership of overall direction and delivery.</p></div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-tag mono">INFORMAL</div>
+        <div><h4>Peer support</h4><p>Regularly helps classmates work through coursework and coding problems.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--EDUCATION-->
+<section id="education">
+  <div class="wrap">
+    <div class="section-index reveal">06 - EDUCATION</div>
+    <h2 class="section-title reveal">Zhejiang University of Science and Technology</h2>
+    <div class="edu-block reveal">
+      <h3>B.S. Computer Science</h3>
+      <div class="edu-meta">2023 – 2027 (in progress) · GPA 3.5 / 5</div>
+      <div class="course-tags">
+        <span>Data Structures &amp; Algorithms</span><span>Operating Systems</span><span>Computer Networks</span>
+        <span>Database Systems / SQL</span><span>Software Engineering</span><span>Computer Architecture</span>
+        <span>Web Development</span><span>Artificial Intelligence / Machine Learning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--CONTACT-->
+<section id="contact" class="contact-section">
+  <div class="wrap">
+    <div class="section-index reveal">07 - CONTACT</div>
+    <h2 class="reveal">Let's build something.</h2>
+    <div class="contact-rows reveal">
+      <div class="contact-row"><div class="c-k mono">NAME</div><div class="c-v">Jonathan Faith Poedjianto</div></div>
+      <div class="contact-row"><div class="c-k mono">EMAIL</div><div class="c-v">jonathanpoedjianto@gmail.com</div></div>
+      <div class="contact-row"><div class="c-k mono">GITHUB</div><div class="c-v">https://github.com/jopet-JF/portfolio</div></div>
+      <a class="contact-row cv-row" href="assets/CV-Jofaith-Internship.pdf" target="_blank" rel="noopener" data-cv-link data-cursor="VIEW">
+        <div class="c-k mono">CV</div>
+        <div class="c-v">Download PDF →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-copy">© 2026 JONATHAN FAITH POEDJIANTO</div>
+  <div class="f-tag">HANGZHOU, CHINA</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
