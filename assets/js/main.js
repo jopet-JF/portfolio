@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------------- Preloader ---------------- */
+  /*  Preloader  */
   const preloader = document.getElementById('preloader');
   if (preloader) {
     const countEl = preloader.querySelector('.pl-count');
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* ---------------- Nav scroll state ---------------- */
+  /*  Nav scroll state  */
   const nav = document.querySelector('.nav');
   const onScroll = () => {
     if (window.scrollY > 40) nav.classList.add('scrolled');
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------------- Mobile menu ---------------- */
+  /*  Mobile menu  */
   const toggle = document.querySelector('.nav-toggle');
   const panel = document.querySelector('.mobile-panel');
   const closeBtn = document.querySelector('.mobile-panel .close-btn');
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeBtn) closeBtn.addEventListener('click', closePanel);
   panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', closePanel));
 
-  /* ---------------- Active section highlight ---------------- */
+  /*  Active section highlight  */
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   const sections = [...document.querySelectorAll('section[id]')];
   const sectionObserver = new IntersectionObserver((entries) => {
@@ -79,7 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
   sections.forEach(s => sectionObserver.observe(s));
 
-  /* ---------------- Reveal on scroll ---------------- */
+  /*  Staggered word reveal for main section headings  */
+  document.querySelectorAll('h2.reveal').forEach(title => {
+    const words = title.textContent.trim().split(/\s+/);
+    title.innerHTML = words
+      .map((w, i) => `<span class="word"><span class="word-inner" style="transition-delay:${(i * 0.035).toFixed(3)}s">${w}</span></span>`)
+      .join(' ');
+  });
+
+  /*  Reveal on scroll  */
   const revealEls = document.querySelectorAll('.reveal');
   if (reducedMotion) {
     revealEls.forEach(el => el.classList.add('is-visible'));
@@ -95,11 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => revealObserver.observe(el));
   }
 
-  /* ---------------- Hero text reveal trigger ---------------- */
+  /*  Hero text reveal trigger  */
   const hero = document.querySelector('.hero');
   requestAnimationFrame(() => hero?.classList.add('loaded'));
 
-  /* ---------------- Frame-sequence background: scrubs through 300 frames across the whole page scroll, instantly ---------------- */
+  /*  Frame-sequence background: scrubs through 300 frames across the whole page scroll, instantly  */
   if (!reducedMotion) {
     const bgCanvas = document.getElementById('bgCanvas');
     const bgPosterFallback = document.getElementById('bgPosterFallback');
@@ -173,20 +181,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { if (!video.classList.contains('loaded')) video.style.display = 'none'; }, 6000);
   });
 
-  /* ---------------- CV link: friendly disabled state until the file is actually added ---------------- */
+  /*  CV link: friendly disabled state until the file is actually added  */
   document.querySelectorAll('a[data-cv-link]').forEach(link => {
     fetch(link.getAttribute('href'), { method: 'HEAD' })
       .then(res => { if (!res.ok) throw new Error('missing'); })
       .catch(() => {
         link.classList.add('cv-missing');
-        link.title = 'Add your file as assets/CV Jofaith Internship.pdf to activate this link';
+        link.title = 'Add your file as assets/cv.pdf to activate this link';
         link.addEventListener('click', (e) => e.preventDefault());
       });
   });
 
 
   document.querySelectorAll('img[data-optional-img]').forEach(img => {
-    const wrapper = img.closest('.placeholder');
+    const wrapper = img.closest('.placeholder, .gallery-slot');
     const markLoaded = () => {
       img.classList.add('loaded');
       wrapper?.classList.add('filled');
@@ -202,18 +210,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ---------------- CV link: friendly disabled state if the file isn't there yet ---------------- */
+  /*  CV link: friendly disabled state if the file isn't there yet  */
   document.querySelectorAll('a[data-cv-link]').forEach(link => {
     fetch(link.getAttribute('href'), { method: 'HEAD' })
       .then(res => { if (!res.ok) throw new Error('missing'); })
       .catch(() => {
         link.classList.add('cv-missing');
-        link.setAttribute('title', 'Add your file as assets/CV Jofaith Internship.pdf to activate this link');
+        link.setAttribute('title', 'Add your file as assets/cv.pdf to activate this link');
         link.addEventListener('click', (e) => e.preventDefault());
       });
   });
 
-  /* ---------------- Custom cursor: replaces the native pointer, morphs on hover ---------------- */
+  /*  Custom cursor: replaces the native pointer, morphs on hover  */
   const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   if (canHover && !reducedMotion) {
     document.documentElement.classList.add('custom-cursor-active');
@@ -268,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------------- Magnetic pull: nav links + project links drift toward the cursor ---------------- */
+  /*  Magnetic pull: nav links + project links drift toward the cursor  */
   if (canHover && !reducedMotion) {
     document.querySelectorAll('.nav-links a, .proj-link').forEach(el => {
       const strength = 0.35;
@@ -282,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------------- Hero parallax: text drifts opposite the cursor, subtly ---------------- */
+  /*  Hero parallax: text drifts opposite the cursor, subtly  */
   if (canHover && !reducedMotion) {
     const heroContent = document.querySelector('.hero-content');
     const heroEl = document.querySelector('.hero');
@@ -299,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ---------------- Project rows: subtle 3D tilt toward the cursor ---------------- */
+  /*  Project rows: subtle 3D tilt toward the cursor  */
   if (canHover && !reducedMotion) {
     document.querySelectorAll('.proj-row').forEach(row => {
       row.addEventListener('mousemove', (e) => {
@@ -312,11 +320,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------------- Status strip: simple live-looking clock (cosmetic, honest) ---------------- */
+  /*  Status strip: simple live-looking clock (cosmetic, honest)  */
   const uptimeEl = document.querySelector('[data-uptime]');
   if (uptimeEl) {
     // This does not connect to any real running instance of FRIDAY —
-    // it's a static, honest label, not a live system readout.
+    // it's a static, honest label, not a live label.
     uptimeEl.textContent = 'local — not connected';
+  }
+
+  /*  Hover-follow image preview: project rows  */
+  if (canHover && !reducedMotion) {
+    const hoverPreview = document.getElementById('hoverPreview');
+    const hoverPreviewImg = document.getElementById('hoverPreviewImg');
+    if (hoverPreview && hoverPreviewImg) {
+      const PREVIEW_W = 300, PREVIEW_H = 210, OFFSET_X = 30;
+      document.querySelectorAll('.proj-row').forEach(row => {
+        row.addEventListener('mousemove', (e) => {
+          const shot = row.querySelector('.gallery-slot .ph-img.loaded');
+          if (!shot) { hoverPreview.classList.remove('active'); return; }
+          if (hoverPreviewImg.src !== shot.src) hoverPreviewImg.src = shot.src;
+          hoverPreview.classList.add('active');
+          const x = Math.min(e.clientX + OFFSET_X, window.innerWidth - PREVIEW_W - 16);
+          const y = Math.min(Math.max(e.clientY - PREVIEW_H / 2, 16), window.innerHeight - PREVIEW_H - 16);
+          hoverPreview.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        row.addEventListener('mouseleave', () => hoverPreview.classList.remove('active'));
+      });
+    }
+  }
+
+  /*  Lightbox: click any loaded screenshot to view it full-size  */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  if (lightbox && lightboxImg) {
+    const openLightbox = (src, alt) => {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('open');
+    };
+    const closeLightbox = () => {
+      lightbox.classList.remove('open');
+      setTimeout(() => { if (!lightbox.classList.contains('open')) lightboxImg.src = ''; }, 300);
+    };
+    document.addEventListener('click', (e) => {
+      const shot = e.target.closest('img.ph-img.loaded');
+      if (shot) { openLightbox(shot.src, shot.alt); return; }
+      if (e.target.closest('#lightbox')) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
   }
 });
