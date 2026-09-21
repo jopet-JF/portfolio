@@ -1,15 +1,10 @@
 # Jonathan Faith Poedjianto - Portfolio
-<<<<<<< HEAD
-A fully static, dependency-free portfolio site. No build step, no framework, no server required - it's plain HTML, CSS, and vanilla JavaScript, so it runs anywhere a browser can load a file.
-=======
 
 A fully static, dependency-free portfolio site. No build step, no framework,
 no server required - it's plain HTML, CSS, and vanilla JavaScript, so it
 runs anywhere a browser can load a file.
 
 ## Files
->>>>>>> c988ac412013355804d3120729156cc822c48c8e
-
 ```
 Files
 index.html                          → the entire site
